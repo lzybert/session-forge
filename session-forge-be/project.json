@@ -1,0 +1,58 @@
+{
+  "name": "session-forge-be",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "session-forge-be/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/session-forge-be",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "session-forge-be/src/main.ts",
+        "tsConfig": "session-forge-be/tsconfig.app.json",
+        "assets": ["session-forge-be/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "session-forge-be:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "session-forge-be:build:development"
+        },
+        "production": {
+          "buildTarget": "session-forge-be:build:production"
+        }
+      }
+    }
+  }
+}
