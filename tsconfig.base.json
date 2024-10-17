@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "composite": true,
@@ -29,6 +31,9 @@
     "sourceMap": false,
     "strict": true,
     "target": "es2022",
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "paths": {
+      "@session-forge/shared-types": ["packages/shared-types/src/index.ts"]
+    }
   }
 }
