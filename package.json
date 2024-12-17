@@ -1,69 +1,19 @@
 {
-  "name": "@session-forge/source",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {},
+  "name": "session-forge",
   "private": true,
-  "dependencies": {
-    "@chakra-ui/icons": "^2.2.4",
-    "@chakra-ui/next-js": "^2.4.2",
-    "@chakra-ui/react": "^2.10.3",
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
-    "@eslint/eslintrc": "github:eslint/eslintrc",
-    "@nrwl/next": "^19.8.4",
-    "@nrwl/node": "^19.8.4",
-    "axios": "^1.6.0",
-    "dotenv": "^16.4.5",
-    "express": "~4.18.3",
-    "framer-motion": "^11.11.9",
-    "mongoose": "^8.7.1",
-    "next": "14.2.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@eslint/compat": "^1.1.1",
-    "@eslint/js": "^9.8.0",
-    "@nx/esbuild": "19.8.4",
-    "@nx/eslint": "19.8.4",
-    "@nx/eslint-plugin": "19.8.4",
-    "@nx/jest": "19.8.4",
-    "@nx/js": "20.0.1",
-    "@nx/next": "19.8.4",
-    "@nx/node": "19.8.4",
-    "@nx/react": "20.0.1",
-    "@swc-node/register": "~1.9.1",
-    "@swc/core": "~1.5.7",
-    "@swc/helpers": "~0.5.11",
-    "@testing-library/react": "15.0.6",
-    "@types/express": "~4.17.13",
-    "@types/jest": "^29.5.12",
-    "@types/node": "18.16.9",
-    "@types/react": "18.3.1",
-    "@types/react-dom": "18.3.0",
-    "babel-jest": "^29.7.0",
-    "esbuild": "^0.19.2",
-    "eslint": "^9.8.0",
-    "eslint-config-next": "14.2.3",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "2.30.0",
-    "eslint-plugin-jsx-a11y": "6.7.1",
-    "eslint-plugin-react": "7.35.0",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "jest-environment-node": "^29.7.0",
-    "nx": "20.0.1",
-    "prettier": "^2.6.2",
-    "ts-jest": "^29.1.0",
-    "ts-node": "10.9.1",
-    "tslib": "^2.3.0",
-    "typescript": "~5.5.2",
-    "typescript-eslint": "^8.0.0"
+    "prettier": "^3.2.5",
+    "turbo": "^2.3.3",
+    "typescript": "5.5.4"
   },
-  "workspaces": [
-    "packages/*"
-  ],
-  "packageManager": "pnpm@9.6.0"
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
+  }
 }
