@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3d69fb36-1937-435e-ac15-be1f4f61c27d" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;lzybert&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lzybert/session-forge.git&quot;,
+    &quot;accountId&quot;: &quot;725268c4-2d5b-4319-9399-44312e8f1c5c&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2nYUQwCpwnIcStgaUErr2K8wDTz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Nx.session-forge-be:serve.executor": "Run",
+    "Nx.session-forge-be:serve:development.executor": "Run",
+    "Nx.session-forge-fe:dev.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/lzybert/Repos/session-forge/node_modules/prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/lzybert/Repos/session-forge/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "dev.nx.console.project_details_files": [
+      "/Users/lzybert/Repos/session-forge/packages/shared-types/project.json",
+      "/Users/lzybert/Repos/session-forge/packages/shared-types/package.json",
+      "/Users/lzybert/Repos/session-forge/packages/shared-types/tsconfig.json",
+      "/Users/lzybert/Repos/session-forge/packages/shared-types/tsconfig.lib.json",
+      "/Users/lzybert/Repos/session-forge/packages/shared-types/jest.config.ts",
+      "/Users/lzybert/Repos/session-forge/packages/shared-types/eslint.config.js",
+      "/Users/lzybert/Repos/session-forge/session-forge-be/project.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be/package.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be/tsconfig.app.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be/tsconfig.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be/jest.config.ts",
+      "/Users/lzybert/Repos/session-forge/session-forge-be/eslint.config.js",
+      "/Users/lzybert/Repos/session-forge/session-forge-be-e2e/project.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be-e2e/package.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be-e2e/tsconfig.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be-e2e/eslint.config.js",
+      "/Users/lzybert/Repos/session-forge/session-forge-fe/project.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-fe/package.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-fe/tsconfig.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-fe/next.config.js",
+      "/Users/lzybert/Repos/session-forge/session-forge-fe/jest.config.ts"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/session-forge-fe/src/app" />
+      <recent name="$PROJECT_DIR$/session-forge-fe/src/app/components" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Nx.session-forge-fe:dev">
+    <configuration name="session-forge-be:serve" type="NxRunConfigurationType">
+      <option name="nx-projects" value="session-forge-be" />
+      <option name="nx-targets" value="serve" />
+      <option name="nx-target-configuration" value="" />
+      <envs />
+      <option name="arguments" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="session-forge-be:serve:development" type="NxRunConfigurationType">
+      <option name="nx-projects" value="session-forge-be" />
+      <option name="nx-targets" value="serve" />
+      <option name="nx-target-configuration" value="development" />
+      <envs />
+      <option name="arguments" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="session-forge-fe:dev" type="NxRunConfigurationType">
+      <option name="nx-projects" value="session-forge-fe" />
+      <option name="nx-targets" value="dev" />
+      <option name="nx-target-configuration" value="" />
+      <envs />
+      <option name="arguments" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d69fb36-1937-435e-ac15-be1f4f61c27d" name="Changes" comment="" />
+      <created>1729149491049</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729149491049</updated>
+      <workItem from="1729149492223" duration="20977000" />
+      <workItem from="1731076460586" duration="6171000" />
+      <workItem from="1731084882813" duration="2000" />
+      <workItem from="1731094529163" duration="3692000" />
+      <workItem from="1731409327011" duration="7733000" />
+      <workItem from="1731935636192" duration="602000" />
+      <workItem from="1732865828322" duration="620000" />
+      <workItem from="1734437547067" duration="3518000" />
+      <workItem from="1734445536659" duration="5210000" />
+      <workItem from="1738581344212" duration="1565000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
