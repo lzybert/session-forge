@@ -1,7 +1,12 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": ["../../apps/web/src/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

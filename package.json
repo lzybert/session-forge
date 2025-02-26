@@ -9,17 +9,25 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "turbo": "^2.3.3",
-    "typescript": "5.5.4",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3"
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.2.5",
+    "turbo": "^2.4.0",
+    "typescript": "5.5.4"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@9.6.0",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@chakra-ui/react": "^3.6.0",
+    "@emotion/react": "^11.14.0",
+    "dotenv": "^16.4.7",
+    "framer-motion": "^12.4.3",
+    "next-themes": "^0.4.4",
+    "react-icons": "^5.4.0"
+  },
   "lint-staged": {
     "apps/**/*.{js,ts,jsx,tsx}": [
       "eslint --fix"
@@ -30,5 +38,9 @@
     "*.json": [
       "prettier --write"
     ]
-  }
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }
