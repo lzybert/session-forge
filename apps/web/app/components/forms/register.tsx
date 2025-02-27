@@ -1,4 +1,4 @@
-import { Button, Field, Fieldset, Input, Stack } from '@chakra-ui/react';
+import { Alert, Button, CloseButton, Field, Fieldset, Input, Stack } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -34,7 +34,7 @@ const RegisterForm = () => {
   });
   return (
     <form onSubmit={onSubmit}>
-      <Fieldset.Root size="lg" maxW="md">
+      <Fieldset.Root size="lg" maxW="md" height={420}>
         <Stack>
           <Fieldset.Legend>Sign up</Fieldset.Legend>
           <Fieldset.HelperText>
@@ -85,9 +85,19 @@ const RegisterForm = () => {
           textStyle="link"
           borderColor="cthulhu-green-100/50"
           bg="cthulhu-green-700/90"
-          px="16">
+          px="16"
+          disabled={loading}
+          loading={loading}
+        >
           Submit
         </Button>
+        {message && <Alert.Root status="info" variant="surface" my={8} py={4} px={4}>
+          <Alert.Indicator />
+          <Alert.Content>
+            <Alert.Title>{message}</Alert.Title>
+          </Alert.Content>
+          <CloseButton pos="absolute" top="1" insetEnd="0" onClick={()=> setMessage(null)}/>
+        </Alert.Root>}
       </Fieldset.Root>
     </form>
   );

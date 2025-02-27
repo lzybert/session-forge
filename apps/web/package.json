@@ -17,6 +17,7 @@
     "@repo/themes": "workspace:*",
     "@repo/ui": "workspace:*",
     "bcryptjs": "^3.0.2",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.10.1",
     "next": "^15.1.0",
     "next-auth": "^4.24.11",

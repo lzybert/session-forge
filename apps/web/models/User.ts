@@ -21,5 +21,5 @@ const UserSchema: Schema = new Schema({
 });
 
 // Export the model
-export default mongoose.models.User ||
+export default mongoose.models.User as mongoose.Model<IUser> ||
   mongoose.model<IUser>('User', UserSchema);
