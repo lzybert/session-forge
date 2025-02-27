@@ -1,0 +1,5 @@
+- add session management (nextauth)
+- add singup/signin with google
+- add zustand for state
+- add pandacss for styling
+- rest
