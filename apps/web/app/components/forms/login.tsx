@@ -1,14 +1,13 @@
-import { Alert, Button, CloseButton, Field, Fieldset, Input, Link as ChakraLink, Stack, Text } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Alert, Button, CloseButton, Field, Fieldset, Input, Stack } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-interface RegisterFormValues {
+interface LoginFormValues {
   email: string;
   password: string;
 }
 
-const RegisterForm = () => {
+const LoginForm = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<string | null>(null);
 
@@ -17,12 +16,12 @@ const RegisterForm = () => {
     handleSubmit,
     getValues,
     formState: { errors },
-  } = useForm<RegisterFormValues>();
+  } = useForm<LoginFormValues>();
 
   const onSubmit = handleSubmit(async () => {
     setLoading(true);
     const { email, password } = getValues();
-    const res = await fetch('/api/register', {
+    const res = await fetch('/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email, password: password }),
@@ -66,10 +65,6 @@ const RegisterForm = () => {
             <Input
               {...register('password', {
                 required: 'Password is required',
-                pattern: {
-                  value: RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'),
-                  message: 'Password must contain at least 8 characters, 1 of them must be an uppercase letter, 1 number and 1 special character.'
-                }
               })}
               placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"
               type="password"
@@ -90,7 +85,7 @@ const RegisterForm = () => {
           disabled={loading}
           loading={loading}
         >
-          Signup
+          Login
         </Button>
         {message && <Alert.Root status="info" variant="surface" my={8} py={4} px={4}>
           <Alert.Indicator />
@@ -100,9 +95,8 @@ const RegisterForm = () => {
           <CloseButton pos="absolute" top="1" insetEnd="0" onClick={()=> setMessage(null)}/>
         </Alert.Root>}
       </Fieldset.Root>
-      <Text textStyle='sm'>Already have an account? Go to <ChakraLink variant='plain' asChild><Link href={'/login'}>Login</Link></ChakraLink> page.</Text>
     </form>
   );
 };
 
-export { RegisterForm };
+export { LoginForm };
