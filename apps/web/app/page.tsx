@@ -3,11 +3,13 @@
 import { Bleed, Button, Heading,HStack } from '@chakra-ui/react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 import styles from './page.module.css';
 
 export default function Home() {
   const router = useRouter();
+  const session = useSession();
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -50,7 +52,7 @@ export default function Home() {
           </HStack>
         </Bleed>
       </main>
-      <footer className={styles.footer}></footer>
+      <footer className={styles.footer}>{session.status}</footer>
     </div>
   );
 }

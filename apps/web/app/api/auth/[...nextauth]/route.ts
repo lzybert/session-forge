@@ -4,10 +4,10 @@ import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
 
-import { connectToDB } from '../../../lib/db';
-import User from '../../../models/User';
+import { connectToDB } from '../../../../lib/db';
+import User from '../../../../models/User';
 
-export default NextAuth({
+const handler = NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID || '',
@@ -24,15 +24,15 @@ export default NextAuth({
         if (!credentials) return Promise.resolve(null);
         const { email, password } = credentials;
         await connectToDB();
-        const user = await User.findOne({ email: email });
+        const user = await User.findOne({ email: email }).select("+password");
         if (!user) {
-          return Promise.resolve(null);
+          throw new Error("Wrong Email");
         }
 
         const passwordMatch = await bcrypt.compare(password, user.password as string);
-        if (!passwordMatch) return Promise.resolve('Invalid email or password');
-
-        return Promise.resolve({ id: user._id, email: user.email });
+        if (!passwordMatch) throw new Error("Wrong Password");
+        console.log(user);
+        return user;
       }
     })
   ],
@@ -45,10 +45,11 @@ export default NextAuth({
       return token;
     },
     async session({ session, token}) {
-      // @ts-ignore
-      session.user.id = token.id;
+      session.user.id = token.accessToken;
       return session;
     }
   },
   secret: process.env.NEXTAUTH_SECRET
 });
+
+export { handler as GET, handler as POST };

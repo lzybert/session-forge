@@ -5,6 +5,8 @@ import { Bitter, Jacquard_24 } from 'next/font/google';
 
 import { Provider } from '@/components/ui/provider';
 
+import { AuthProvider } from './authProvider';
+
 const jacquard24 = Jacquard_24({
   variable: '--font-jacquard-24',
   weight: '400',
@@ -31,7 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${jacquard24.variable} ${bitter.variable}`}>
-        <Provider>{children}</Provider>
+        <AuthProvider>
+          <Provider>{children}</Provider>
+        </AuthProvider>
       </body>
     </html>
   );

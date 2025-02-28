@@ -7,7 +7,7 @@ import { ThemeProvider } from 'next-themes';
 
 export function Provider(props) {
   if (isValidSystem(sessionForgeSystem)) {
-    console.log(sessionForgeSystem);
+    //console.log(sessionForgeSystem);
   }
   return (
     <ChakraProvider value={sessionForgeSystem}>

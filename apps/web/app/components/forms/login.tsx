@@ -1,4 +1,6 @@
 import { Alert, Button, CloseButton, Field, Fieldset, Input, Stack } from '@chakra-ui/react';
+import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -10,6 +12,7 @@ interface LoginFormValues {
 const LoginForm = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<string | null>(null);
+  const router = useRouter();
 
   const {
     register,
@@ -18,27 +21,41 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm<LoginFormValues>();
 
+  // const onSubmit = handleSubmit(async () => {
+  //   setLoading(true);
+  //   const { email, password } = getValues();
+  //   const res = await fetch('/api/login', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify({ email: email, password: password }),
+  //   });
+  //
+  //   const data = await res.json();
+  //   console.log(data);
+  //   setMessage(data.error || data.message);
+  //   setLoading(false);
+  // });
   const onSubmit = handleSubmit(async () => {
     setLoading(true);
+    setMessage(null);
     const { email, password } = getValues();
-    const res = await fetch('/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, password: password }),
-    });
-
-    const data = await res.json();
-    console.log(data);
-    setMessage(data.error || data.message);
-    setLoading(false);
-  });
+    const res = await signIn('credentials', { email, password, redirect: false });
+    if (res?.error) {
+      setMessage(res.error);
+      setLoading(false);
+    }
+    if (res?.ok) {
+      setLoading(false);
+      return router.push('/');
+    }
+  })
   return (
     <form onSubmit={onSubmit}>
       <Fieldset.Root size="lg" maxW="md" height={420}>
         <Stack>
-          <Fieldset.Legend>Sign up</Fieldset.Legend>
+          <Fieldset.Legend>Sign In</Fieldset.Legend>
           <Fieldset.HelperText>
-            Please provide your email and password.
+            Provide your credentials for login.
           </Fieldset.HelperText>
         </Stack>
 

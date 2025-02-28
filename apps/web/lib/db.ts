@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
 import 'dotenv/config';
+
+import mongoose from 'mongoose';
 
 const MONGODB_URI =
   'mongodb+srv://lzybert:LURfNvDesmYJUzv3@cluster0.jgati.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'; //process.env.MONGODB_URI as string;
-console.log(MONGODB_URI);
 if (!MONGODB_URI) {
   throw new Error('Please define MONGODB_URI in .env.local');
 }
@@ -11,6 +11,7 @@ if (!MONGODB_URI) {
 const cached = (global as any).mongoose || { conn: null, promise: null };
 
 export async function connectToDB(): Promise<typeof mongoose> {
+  console.log('Connected to DB');
   if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
