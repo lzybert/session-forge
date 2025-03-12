@@ -1,0 +1,52 @@
+import mongoose, { Document, Schema, Types } from 'mongoose';
+
+export interface ICampaign extends Document {
+  gm: Types.ObjectId,
+  title: string,
+  system: string,
+  createdAt: Date,
+  description?: string,
+  players?: Types.ObjectId[],
+  sessions?: Types.ObjectId[],
+  generalNotes?: string,
+}
+
+
+const CampaignSchema: Schema = new Schema({
+  gm: {
+    type: Types.ObjectId,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  system: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
+  description: {
+    type: String,
+    required: false,
+  },
+  players: {
+    type: [Types.ObjectId],
+    required: false
+  },
+  sessions: {
+    type: [Types.ObjectId],
+    required: false
+  },
+  generalNotes: {
+    type: String,
+    required: false,
+  }
+});
+
+
+export default mongoose.models.Campaign as mongoose.Model<ICampaign> ||
+mongoose.model<ICampaign>('Campaign', CampaignSchema);
