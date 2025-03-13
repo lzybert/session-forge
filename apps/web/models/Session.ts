@@ -14,6 +14,7 @@ const SessionSchema: Schema = new Schema({
   campaignId: {
     type: Types.ObjectId,
     required: true,
+    ref: 'Campaign',
   },
   date: {
     type: Date,
@@ -26,10 +27,12 @@ const SessionSchema: Schema = new Schema({
   attendees: {
     type: [Types.ObjectId],
     required: true,
+    ref: 'Player',
   },
   notes: {
     type: [Types.ObjectId],
     required: false,
+    ref: 'Note',
   },
   events: {
     type: [String],

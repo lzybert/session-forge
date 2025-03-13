@@ -16,6 +16,7 @@ const CampaignSchema: Schema = new Schema({
   gm: {
     type: Types.ObjectId,
     required: true,
+    ref: 'User',
   },
   title: {
     type: String,
@@ -35,11 +36,13 @@ const CampaignSchema: Schema = new Schema({
   },
   players: {
     type: [Types.ObjectId],
-    required: false
+    required: false,
+    ref: 'Player',
   },
   sessions: {
     type: [Types.ObjectId],
-    required: false
+    required: false,
+    ref: 'Session',
   },
   generalNotes: {
     type: String,

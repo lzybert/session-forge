@@ -14,14 +14,17 @@ const NoteSchema: Schema = new Schema({
   campaignId: {
     type: Types.ObjectId,
     required: true,
+    ref: 'Campaign',
   },
   sessionId: {
     type: Types.ObjectId,
     required: true,
+    ref: 'Session',
   },
   authorId: {
     type: Types.ObjectId,
     required: true,
+    ref: 'User',
   },
   title: {
     type: String,
