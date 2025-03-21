@@ -24,6 +24,7 @@ const AttendanceSchema: Schema = new Schema({
   sessionId: {
     type: Types.ObjectId,
     required: true,
+    ref: 'Session',
   },
   attendance: {
     type: Boolean,
@@ -56,6 +57,7 @@ const CharacterSchema: Schema = new Schema({
   campaignId: {
     type: Types.ObjectId,
     required: true,
+    ref: 'Campaign',
   }
 })
 

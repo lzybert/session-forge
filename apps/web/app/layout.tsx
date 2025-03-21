@@ -6,6 +6,7 @@ import { Bitter, Jacquard_24 } from 'next/font/google';
 import { Provider } from '@/components/ui/provider';
 
 import { AuthProvider } from './authProvider';
+import { Topbar } from './components/forms/navigation/topbar';
 
 const jacquard24 = Jacquard_24({
   variable: '--font-jacquard-24',
@@ -34,7 +35,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${jacquard24.variable} ${bitter.variable}`}>
         <AuthProvider>
-          <Provider>{children}</Provider>
+          <Provider>
+            <Topbar/>
+            {children}
+          </Provider>
         </AuthProvider>
       </body>
     </html>

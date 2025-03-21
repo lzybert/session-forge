@@ -9,8 +9,7 @@ import styles from './page.module.css';
 
 export default function Home() {
   const router = useRouter();
-  const session = useSession();
-  console.log(session);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -42,7 +41,6 @@ export default function Home() {
               onClick={() => router.push('/register')}>
               Sign Up
             </Button>
-            {session.status}
             <Button
               variant="outline"
               textStyle="link"
