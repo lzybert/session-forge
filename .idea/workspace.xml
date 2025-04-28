@@ -62,55 +62,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Nx.session-forge-be:serve.executor&quot;: &quot;Run&quot;,
-    &quot;Nx.session-forge-be:serve:development.executor&quot;: &quot;Run&quot;,
-    &quot;Nx.session-forge-fe:dev.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/lzybert/Repos/session-forge/apps/web/app/dashboard&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.themes &gt; build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.ui &gt; generate:component.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/lzybert/Repos/session-forge/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/lzybert/Repos/session-forge/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Nx.session-forge-be:serve.executor": "Run",
+    "Nx.session-forge-be:serve:development.executor": "Run",
+    "Nx.session-forge-fe:dev.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/lzybert/Repos/session-forge/apps/web/app/dashboard",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "npm.themes > build.executor": "Run",
+    "npm.ui > generate:component.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/lzybert/Repos/session-forge/node_modules/prettier",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "ts.external.directory.path": "/Users/lzybert/Repos/session-forge/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;dev.nx.console.project_details_files&quot;: [
-      &quot;/Users/lzybert/Repos/session-forge/packages/shared-types/project.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/packages/shared-types/package.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/packages/shared-types/tsconfig.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/packages/shared-types/tsconfig.lib.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/packages/shared-types/jest.config.ts&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/packages/shared-types/eslint.config.js&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-be/project.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-be/package.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-be/tsconfig.app.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-be/tsconfig.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-be/jest.config.ts&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-be/eslint.config.js&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-be-e2e/project.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-be-e2e/package.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-be-e2e/tsconfig.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-be-e2e/eslint.config.js&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-fe/project.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-fe/package.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-fe/tsconfig.json&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-fe/next.config.js&quot;,
-      &quot;/Users/lzybert/Repos/session-forge/session-forge-fe/jest.config.ts&quot;
+  "keyToStringList": {
+    "dev.nx.console.project_details_files": [
+      "/Users/lzybert/Repos/session-forge/packages/shared-types/project.json",
+      "/Users/lzybert/Repos/session-forge/packages/shared-types/package.json",
+      "/Users/lzybert/Repos/session-forge/packages/shared-types/tsconfig.json",
+      "/Users/lzybert/Repos/session-forge/packages/shared-types/tsconfig.lib.json",
+      "/Users/lzybert/Repos/session-forge/packages/shared-types/jest.config.ts",
+      "/Users/lzybert/Repos/session-forge/packages/shared-types/eslint.config.js",
+      "/Users/lzybert/Repos/session-forge/session-forge-be/project.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be/package.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be/tsconfig.app.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be/tsconfig.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be/jest.config.ts",
+      "/Users/lzybert/Repos/session-forge/session-forge-be/eslint.config.js",
+      "/Users/lzybert/Repos/session-forge/session-forge-be-e2e/project.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be-e2e/package.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be-e2e/tsconfig.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-be-e2e/eslint.config.js",
+      "/Users/lzybert/Repos/session-forge/session-forge-fe/project.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-fe/package.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-fe/tsconfig.json",
+      "/Users/lzybert/Repos/session-forge/session-forge-fe/next.config.js",
+      "/Users/lzybert/Repos/session-forge/session-forge-fe/jest.config.ts"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/web/app/dashboard" />
@@ -193,7 +193,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.26775.11" />
       </set>
     </attachedChunks>
   </component>
@@ -230,6 +230,9 @@
       <workItem from="1744008599730" duration="18288000" />
       <workItem from="1744612268344" duration="3790000" />
       <workItem from="1745303255337" duration="173000" />
+      <workItem from="1745303791755" duration="5985000" />
+      <workItem from="1745502891669" duration="1216000" />
+      <workItem from="1745835853704" duration="443000" />
     </task>
     <servers />
   </component>

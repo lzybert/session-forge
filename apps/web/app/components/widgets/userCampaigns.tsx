@@ -59,7 +59,10 @@ const UserCampaignsWidget = () => {
       <Heading className={headerClass}>My Campaigns</Heading>
       {campaigns.length > 0 &&
         campaigns.map((campaign) => (
-          <Box className={campaignCardClass} key={campaign.id}>
+          <Box
+            className={campaignCardClass}
+            key={campaign._id as unknown as Key}>
+            {campaign.id}
             <Heading>{campaign.title}</Heading>
             <Tag.Root colorPalette="teal">
               <Tag.Label className={systemLabelClass}>

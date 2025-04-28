@@ -32,11 +32,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${jacquard24.variable} ${bitter.variable}`}>
         <AuthProvider>
           <Provider>
-            <Topbar/>
+            <Topbar />
             {children}
           </Provider>
         </AuthProvider>
