@@ -4,13 +4,14 @@ import { Bleed, Drawer, Flex, Icon, Portal, Text } from '@chakra-ui/react';
 import { useSession } from 'next-auth/react';
 import { RiMenuLine } from 'react-icons/ri';
 
-import { css } from '../../../styled-system/css';
+import { css } from '../../styled-system/css';
 import SideMenu from './sideMenu';
 
 
 const Bar = css({
   height: '50px',
-  background: 'abyss-black-100',
+  background: 'abyss-black-700',
+  padding: '10px'
 })
 const MenuItem = css({
   padding: '2.5',

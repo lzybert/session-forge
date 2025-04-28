@@ -1,9 +1,8 @@
 'use client';
 
-import { Bleed, Button, Heading,HStack } from '@chakra-ui/react';
+import { Bleed, Button, Heading, HStack } from '@chakra-ui/react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useSession } from 'next-auth/react';
 
 import styles from './page.module.css';
 

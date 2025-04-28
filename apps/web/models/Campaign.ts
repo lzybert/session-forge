@@ -1,16 +1,16 @@
 import mongoose, { Document, Schema, Types } from 'mongoose';
 
 export interface ICampaign extends Document {
-  gm: Types.ObjectId,
-  title: string,
-  system: string,
-  createdAt: Date,
-  description?: string,
-  players?: Types.ObjectId[],
-  sessions?: Types.ObjectId[],
-  generalNotes?: string,
+  gm: Types.ObjectId;
+  title: string;
+  system: string;
+  createdAt: Date;
+  description?: string;
+  players?: Types.ObjectId[];
+  sessions?: Types.ObjectId[];
+  generalNotes?: string;
+  status: 'active' | 'planning' | 'finished' | 'on hold';
 }
-
 
 const CampaignSchema: Schema = new Schema({
   gm: {
@@ -28,7 +28,7 @@ const CampaignSchema: Schema = new Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   description: {
     type: String,
@@ -47,9 +47,13 @@ const CampaignSchema: Schema = new Schema({
   generalNotes: {
     type: String,
     required: false,
-  }
+  },
+  status: {
+    type: String,
+    enum: ['active', 'planning', 'finished', 'on hold'],
+    default: 'planning',
+  },
 });
 
-
-export default mongoose.models.Campaign as mongoose.Model<ICampaign> ||
-mongoose.model<ICampaign>('Campaign', CampaignSchema);
+export default (mongoose.models.Campaign as mongoose.Model<ICampaign>) ||
+  mongoose.model<ICampaign>('Campaign', CampaignSchema);

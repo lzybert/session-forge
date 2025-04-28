@@ -2,7 +2,7 @@ import { CloseButton, Drawer } from '@chakra-ui/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { cva } from '../../../styled-system/css';
+import { cva } from '../../styled-system/css';
 
 const listElements = cva({
   base: {
@@ -12,7 +12,7 @@ const listElements = cva({
     active: {
       true: {
         fontWeight: 'bold',
-        color: 'emerald.500'
+        color: 'cthulhu-green-500'
       }
     }
   }

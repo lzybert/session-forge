@@ -6,7 +6,7 @@ import { Bitter, Jacquard_24 } from 'next/font/google';
 import { Provider } from '@/components/ui/provider';
 
 import { AuthProvider } from './authProvider';
-import { Topbar } from './components/forms/navigation/topbar';
+import { Topbar } from './components/navigation/topbar';
 
 const jacquard24 = Jacquard_24({
   variable: '--font-jacquard-24',
