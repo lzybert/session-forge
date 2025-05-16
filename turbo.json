@@ -1,7 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
-  "globalEnv": ["GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET"],
+  "globalEnv": ["GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET", "MONGODB_URI"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],

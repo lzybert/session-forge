@@ -2,8 +2,8 @@ import 'dotenv/config';
 
 import mongoose from 'mongoose';
 
-const MONGODB_URI =
-  'mongodb+srv://lzybert:LURfNvDesmYJUzv3@cluster0.jgati.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'; //process.env.MONGODB_URI as string;
+const MONGODB_URI = process.env.MONGODB_URI as string;
+
 if (!MONGODB_URI) {
   throw new Error('Please define MONGODB_URI in .env.local');
 }
