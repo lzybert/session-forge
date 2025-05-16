@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 
 import { connectToDB } from '../../../lib/db';
-import Campaign, { ICampaign } from '../../../models/Campaign';
+import Session, { ISession } from '../../../models/Session';
 import User, { IUser } from '../../../models/User';
 
 const isSignedIn = async (req: NextRequest) => {
@@ -12,16 +12,20 @@ const isSignedIn = async (req: NextRequest) => {
 export async function POST(req: NextRequest) {
   try {
     await connectToDB();
-    const { gm, title, system, description, createdAt } = await req.json();
+    const { gm, campaignId, name, date, summary, attendees, notes, events } =
+      await req.json();
     const existingUser: IUser | null = await User.findOne({ _id: gm });
     const isLogged = await isSignedIn(req);
     if (isLogged && existingUser) {
-      await Campaign.create({
+      await Session.create({
         gm,
-        title,
-        system,
-        description,
-        createdAt,
+        campaignId,
+        name,
+        summary,
+        date,
+        attendees,
+        notes,
+        events,
       });
 
       return NextResponse.json(
@@ -51,12 +55,12 @@ export async function GET(req: NextRequest, res: NextApiResponse) {
     if (isLogged) {
       //const session = await getServerSession();
       //console.log('im logged in', session?.user);
-      const userCampaigns: ICampaign[] | null = await Campaign.find({
+      const userSessions: ISession[] | null = await Session.find({
         gm: isLogged.accessToken,
       });
-      console.log(userCampaigns);
+      console.log(userSessions);
       //return res.status(200).json(userCampaigns);
-      return NextResponse.json({ data: userCampaigns }, { status: 200 });
+      return NextResponse.json({ data: userSessions }, { status: 200 });
     } else {
       //return res.status(400).send({ error: 'Please login first' });
       return NextResponse.json(

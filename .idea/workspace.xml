@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d69fb36-1937-435e-ac15-be1f4f61c27d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/web/app/api/campaign/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/web/app/components/forms/createCampaign.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/web/app/components/widgets/userCampaigns.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/web/css/pandaTheme.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/api/register/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/api/register/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/components/forms/navigation/sideMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/components/navigation/sideMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/components/forms/navigation/topbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/components/navigation/topbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/dashboard/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/models/Campaign.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/models/Campaign.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/panda.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/panda.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/turbo.json" beforeDir="false" afterPath="$PROJECT_DIR$/turbo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/app/api/campaign/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/api/campaign/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/app/components/widgets/userCampaigns.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/components/widgets/userCampaigns.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,8 +55,9 @@
     "Nx.session-forge-be:serve:development.executor": "Run",
     "Nx.session-forge-fe:dev.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.google.cloudcode.ide_session_index": "20250508_0002",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/lzybert/Repos/session-forge/apps/web/app/dashboard",
+    "last_opened_file_path": "/Users/lzybert/Repos/session-forge/apps/web/app/api",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -81,7 +69,7 @@
     "npm.themes > build.executor": "Run",
     "npm.ui > generate:component.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/Users/lzybert/Repos/session-forge/node_modules/prettier",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/Users/lzybert/Repos/session-forge/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -113,8 +101,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/apps/web/app/dashboard" />
       <recent name="$PROJECT_DIR$/apps/web/app/api" />
+      <recent name="$PROJECT_DIR$/apps/web/app/dashboard" />
       <recent name="$PROJECT_DIR$/apps/web/app/login" />
       <recent name="$PROJECT_DIR$/apps/web" />
       <recent name="$PROJECT_DIR$/packages/chakra-components" />
@@ -232,7 +220,9 @@
       <workItem from="1745303255337" duration="173000" />
       <workItem from="1745303791755" duration="5985000" />
       <workItem from="1745502891669" duration="1216000" />
-      <workItem from="1745835853704" duration="443000" />
+      <workItem from="1745835853704" duration="11427000" />
+      <workItem from="1746437443935" duration="4693000" />
+      <workItem from="1746694140808" duration="3942000" />
     </task>
     <servers />
   </component>

@@ -13,35 +13,40 @@ import { useSession } from 'next-auth/react';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-interface CreateCampaignFormValues {
-  gm: Types.ObjectId;
-  title: string;
-  system: string;
-  createdAt: Date;
-  description?: string;
-  players?: Types.ObjectId[];
-  sessions?: Types.ObjectId[];
-  generalNotes?: string;
-}
-const systemOptions = [
-  { option: 'D&D', value: 'D&D' },
-  { option: 'Call of Cthulhu', value: 'Call of Cthulhu' },
-  { option: 'Pulp Cthulhu', value: 'Pulp Cthulhu' },
-  { option: 'Achtung! Cthulhu', value: 'Achtung! Cthulhu' },
-];
+import { ICampaign } from '../../../models/Campaign';
 
-const CreateCampaignForm = () => {
+interface CreateSessionFormValues {
+  campaignId: Types.ObjectId;
+  gm: Types.ObjectId;
+  name: string;
+  date: Date;
+  summary: string;
+  attendees?: Types.ObjectId[];
+  notes?: Types.ObjectId[];
+  events?: string[];
+}
+
+interface CreateSessionFormProps {
+  campaigns?: ICampaign[];
+}
+
+const CreateSessionForm = ({ campaigns }: CreateSessionFormProps) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<string | null>(null);
   const { data } = useSession();
   const user = data?.user;
+  const campaignOptions =
+    campaigns?.map((campaign) => ({
+      value: (campaign._id as string).toString(), // Convert ObjectId to string for the <option> value
+      option: campaign.title, // Assuming ICampaign has a 'title' property
+    })) ?? [];
 
   const {
     register,
     handleSubmit,
     getValues,
     formState: { errors },
-  } = useForm<CreateCampaignFormValues>();
+  } = useForm<CreateSessionFormValues>();
 
   const onSubmit = handleSubmit(async () => {
     setLoading(true);
@@ -52,16 +57,17 @@ const CreateCampaignForm = () => {
       return;
     }
 
-    const { title, system, description } = getValues();
+    const { name, summary, campaignId } = getValues();
+    console.log(getValues());
     const formValues = {
       gm: user.id,
-      title,
-      system,
-      description,
+      campaignId,
+      name,
+      summary,
       createdAt: new Date(),
     };
 
-    const res = await fetch('/api/campaign', {
+    const res = await fetch('/api/session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formValues),
@@ -76,34 +82,30 @@ const CreateCampaignForm = () => {
     <form onSubmit={onSubmit}>
       <Fieldset.Root size="lg" maxW="md" height={420}>
         <Fieldset.Content py="8">
-          <Field.Root invalid={!!errors.title}>
+          <Field.Root invalid={!!errors.name}>
             <Field.Label>
               Title <Field.RequiredIndicator />
             </Field.Label>
-            <Field.ErrorText>{errors.title?.message}</Field.ErrorText>
+            <Field.ErrorText>{errors.name?.message}</Field.ErrorText>
             <Input
-              {...register('title', {
-                required: 'Campaign title is required',
+              {...register('name', {
+                required: 'Session name is required',
               })}
-              placeholder="me@example.com"
+              placeholder="Session name"
               type="input"
-              name="title"
+              name="name"
               px="2"
             />
           </Field.Root>
 
-          <Field.Root invalid={!!errors.system}>
-            <Field.Label>
-              System <Field.RequiredIndicator />
-            </Field.Label>
-            <Field.ErrorText>{errors.system?.message}</Field.ErrorText>
+          <Field.Root invalid={!!errors.campaignId}>
+            <Field.Label>Campaign</Field.Label>
+            <Field.ErrorText>{errors.campaignId?.message}</Field.ErrorText>
             <NativeSelect.Root size="md">
               <NativeSelect.Field
-                placeholder="Select system"
-                {...register('system', {
-                  required: 'Game system is required',
-                })}>
-                {systemOptions.map((currentValue) => {
+                placeholder="Assign to campaign"
+                {...register('campaignId')}>
+                {campaignOptions.map((currentValue) => {
                   return (
                     <option value={currentValue.value}>
                       {currentValue.option}
@@ -114,14 +116,14 @@ const CreateCampaignForm = () => {
             </NativeSelect.Root>
           </Field.Root>
 
-          <Field.Root invalid={!!errors.description}>
+          <Field.Root invalid={!!errors.summary}>
             <Field.Label>Description</Field.Label>
-            <Field.ErrorText>{errors.description?.message}</Field.ErrorText>
+            <Field.ErrorText>{errors.summary?.message}</Field.ErrorText>
             <Input
-              {...register('description')}
-              placeholder="Campaign description"
+              {...register('summary')}
+              placeholder="Session summary"
               type="text"
-              name="description"
+              name="summary"
               px="2"
             />
           </Field.Root>
@@ -158,4 +160,4 @@ const CreateCampaignForm = () => {
   );
 };
 
-export { CreateCampaignForm };
+export { CreateSessionForm };

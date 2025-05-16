@@ -1,14 +1,15 @@
 import mongoose, { Document, Schema, Types } from 'mongoose';
 
 export interface ISession extends Document {
-  campaignId: Types.ObjectId,
-  date: Date,
-  summary: string,
-  attendees: Types.ObjectId[],
-  notes?: Types.ObjectId[],
-  events?: string[],
+  campaignId: Types.ObjectId;
+  gm: Types.ObjectId;
+  name: string;
+  date: Date;
+  summary: string;
+  attendees?: Types.ObjectId[];
+  notes?: Types.ObjectId[];
+  events?: string[];
 }
-
 
 const SessionSchema: Schema = new Schema({
   campaignId: {
@@ -16,9 +17,19 @@ const SessionSchema: Schema = new Schema({
     required: true,
     ref: 'Campaign',
   },
+  gm: {
+    type: Types.ObjectId,
+    required: true,
+    ref: 'User',
+  },
+  name: {
+    type: String,
+    required: true,
+  },
   date: {
     type: Date,
     required: true,
+    default: Date.now,
   },
   summary: {
     type: String,
@@ -26,7 +37,7 @@ const SessionSchema: Schema = new Schema({
   },
   attendees: {
     type: [Types.ObjectId],
-    required: true,
+    required: false,
     ref: 'Player',
   },
   notes: {
@@ -37,9 +48,8 @@ const SessionSchema: Schema = new Schema({
   events: {
     type: [String],
     required: false,
-  }
+  },
 });
 
-
-export default mongoose.models.Session as mongoose.Model<ISession> ||
-mongoose.model<ISession>('Session', SessionSchema);
+export default (mongoose.models.Session as mongoose.Model<ISession>) ||
+  mongoose.model<ISession>('Session', SessionSchema);
