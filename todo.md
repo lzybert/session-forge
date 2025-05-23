@@ -1,5 +1,7 @@
-- add session management (nextauth)
+- ~~add session management (nextauth)~~
 - add singup/signin with google
 - add zustand for state
-- add pandacss for styling
-- rest
+- ~~add pandacss for styling~~
+- rest api in nextjs at first
+- migrate api to node
+- attach zod after creating all the types/forms

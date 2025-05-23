@@ -45,6 +45,7 @@ const CreateSessionForm = ({ campaigns }: CreateSessionFormProps) => {
     register,
     handleSubmit,
     getValues,
+    reset,
     formState: { errors },
   } = useForm<CreateSessionFormValues>();
 
@@ -57,14 +58,14 @@ const CreateSessionForm = ({ campaigns }: CreateSessionFormProps) => {
       return;
     }
 
-    const { name, summary, campaignId } = getValues();
+    const { name, summary, campaignId, date } = getValues();
     console.log(getValues());
     const formValues = {
       gm: user.id,
       campaignId,
       name,
       summary,
-      createdAt: new Date(),
+      date: new Date(date),
     };
 
     const res = await fetch('/api/session', {
@@ -76,6 +77,10 @@ const CreateSessionForm = ({ campaigns }: CreateSessionFormProps) => {
     const data = await res.json();
     console.log(formValues);
     setMessage(data.error || data.message);
+    if (res.ok) {
+      reset();
+    }
+    reset();
     setLoading(false);
   });
   return (
@@ -107,7 +112,9 @@ const CreateSessionForm = ({ campaigns }: CreateSessionFormProps) => {
                 {...register('campaignId')}>
                 {campaignOptions.map((currentValue) => {
                   return (
-                    <option value={currentValue.value}>
+                    <option
+                      value={currentValue.value}
+                      key={currentValue.option}>
                       {currentValue.option}
                     </option>
                   );
@@ -124,6 +131,22 @@ const CreateSessionForm = ({ campaigns }: CreateSessionFormProps) => {
               placeholder="Session summary"
               type="text"
               name="summary"
+              px="2"
+            />
+          </Field.Root>
+
+          <Field.Root invalid={!!errors.date}>
+            <Field.Label>
+              Date <Field.RequiredIndicator />
+            </Field.Label>
+            <Field.ErrorText>{errors.date?.message}</Field.ErrorText>
+            <Input
+              {...register('date', {
+                required: 'Session date is required',
+              })}
+              placeholder="Session date"
+              type="datetime-local"
+              name="date"
               px="2"
             />
           </Field.Root>

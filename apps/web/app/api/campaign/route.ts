@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import { NextApiResponse } from 'next';
 import { NextRequest, NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
@@ -47,16 +48,44 @@ export async function GET(req: NextRequest, res: NextApiResponse) {
   try {
     await connectToDB();
     const isLogged = await isSignedIn(req);
-    console.log(isLogged);
+    const url = new URL(req.url); // Use req.url to construct the URL object
+    const showUpcoming = url.searchParams.get('showUpcoming') === 'true';
+    console.log(isLogged, showUpcoming);
     if (isLogged) {
-      //const session = await getServerSession();
-      //console.log('im logged in', session?.user);
-      const userCampaigns: ICampaign[] | null = await Campaign.find({
-        gm: isLogged.accessToken,
-      });
-      console.log(userCampaigns);
-      //return res.status(200).json(userCampaigns);
-      return NextResponse.json({ data: userCampaigns }, { status: 200 });
+      const campaignsWithSessions = await Campaign.aggregate([
+        {
+          $match: {
+            gm: new mongoose.Types.ObjectId(isLogged?.accessToken as string),
+          },
+        },
+        {
+          $lookup: {
+            from: 'sessions',
+            localField: '_id',
+            foreignField: 'campaignId',
+            pipeline: showUpcoming
+              ? [
+                  { $match: { date: { $gte: new Date() } } },
+                  {
+                    $sort: { date: 1 },
+                  },
+                  { $limit: 1 },
+                ]
+              : [],
+            as: 'sessions',
+          },
+        },
+        {
+          $sort: {
+            createdAt: -1,
+          },
+        },
+      ]);
+
+      return NextResponse.json(
+        { data: campaignsWithSessions },
+        { status: 200 },
+      );
     } else {
       //return res.status(400).send({ error: 'Please login first' });
       return NextResponse.json(

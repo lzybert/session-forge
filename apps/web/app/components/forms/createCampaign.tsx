@@ -105,7 +105,9 @@ const CreateCampaignForm = () => {
                 })}>
                 {systemOptions.map((currentValue) => {
                   return (
-                    <option value={currentValue.value}>
+                    <option
+                      value={currentValue.value}
+                      key={currentValue.option}>
                       {currentValue.option}
                     </option>
                   );
